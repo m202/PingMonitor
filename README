@@ -1,0 +1,26 @@
+PingMonitor - Internet connectivity notification
+Colin King <cking@m202.net>
+
+For several months, my cable modem would completely freeze about every 4 hours.
+The cable company could not seem to fix the problem, even though they were at
+least able to admit that there was a detectable problem. Replacing the modem
+didn't help. Eventually, the problem "resolved itself" and my Internet
+connection was stable, but during this time it was very annoying and was one of
+the reasons to move my e-mail hosting away from home and to a VPS.
+
+This program constantly pings a remote address. I had 5 static IPs and was
+using it to ping my ISP's gateway, which would be unreachable when the modem
+was frozen. This program would flash the error LED on my Soekris Net5501 every
+time the gateway failed to respond.
+
+
+Free plug: www.soekris.com
+(I don't work for Soekris, I just think they make an awesome product)
+
+
+This program compiles under FreeBSD and Linux, but has only been tested under
+FreeBSD. It uses /dev/error/led, which requires the CPU_SOEKRIS kernel option.
+
+I was too lazy to implement command line options, even though it would take less
+time than it did to write this README, so for now everything is hardcoded.
+Good luck.
