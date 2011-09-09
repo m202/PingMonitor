@@ -73,6 +73,8 @@ void *init_ping_packet(const char *payload, const size_t len) {
 void checksum_packet(void *packet, size_t len) {
     icmphdr_t *header = (icmphdr_t*) packet;
     header->I_CHECKSUM = 0;
+    
+    /* This is copied from RFC 1071 */
     register long sum = 0;
     unsigned short *addr = (unsigned short*) packet;
 
